@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xunit;
 
 namespace Receiver.Receiver.Test
-{
+{ 
     public class ReceiverTest
     {
         footfall foot = new footfall();

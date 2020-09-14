@@ -7,16 +7,15 @@ using System.IO;
 namespace Receiver
 {
     class WriteToCsv
-    {    
-       /* public void CheckForPeakCountMontly(int i,StringBuilder content,int[] peakPerMonth)
+    {
+         public void CheckForPeakCountMontly(int i,StringBuilder content,int[] peakPerMonth)
+         {
+                  if (i < 2) { content.Append("," + peakPerMonth[i]); }
+         }
+        public void CheckForWeaklyAvg(int i, StringBuilder content, double[] avgPerWeak)
         {
-            if (i < 30)
-            {
-                content.Append("," + peakPerMonth[0]);
-            }
-            else { content.Append("," + peakPerMonth[1]); }
-            
-        }*/
+            if (i < 8) { content.Append("," + avgPerWeak[i]); }
+        }
         public void WriteResultToCsv(double[] avgPerDay, double[] avgPerWeak, int[] peakPerMonth)
         {
             StringBuilder content = new StringBuilder();
@@ -24,10 +23,10 @@ namespace Receiver
             for (int i = 0; i < 63; i++)
             {
                 content.Append(avgPerDay[i]);
-                if (i < 8)
-                    content.Append(","+avgPerWeak[i]);
-                if (i < 2)
-                    content.Append("," + peakPerMonth[i]);
+                
+                
+                CheckForWeaklyAvg(i, content, avgPerWeak);
+                CheckForPeakCountMontly(i, content, peakPerMonth);
 
                 content.AppendLine();
             }

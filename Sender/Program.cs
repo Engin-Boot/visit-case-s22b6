@@ -45,16 +45,8 @@ namespace Sender
             }
             // Row Number 0 is fixed for name of columns
             //Console.WriteLine("total no of data rows are " + Row);
-            for (int rownumber = 1; rownumber < lines.Count; rownumber++)
-            {
-                for (int columnnumber = 0; columnnumber < lines[rownumber].Length; columnnumber++)
-                {
-                    Console.Write(lines[rownumber][columnnumber]);
-                    Console.Write(" ");
-                }
-                Console.WriteLine();
-            }
-            Console.ReadLine();
+            PrintOnConsole obj = new PrintOnConsole();
+            obj.printingInfoOnConsole(lines);
         }
     }
 }

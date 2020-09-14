@@ -27,18 +27,10 @@ namespace Receiver
             double[] avgPerDay = new double[63];
             double[] avgPerWeak = new double[8];
             int[] peakPerMonth = new int[2];
-            
-            for (int i = 1; i <= 63; i++)
-            {
-                avgPerDay[i - 1] = obj.getaverageperday(i);
-                
-            }
-            for (int i = 1; i <= 8; i++)
-            {
-                avgPerWeak[i - 1] = obj.getaverageperweak(i);
-            }
-             for (int i=1;i<=2;i++)
-                peakPerMonth[i - 1] = obj.getpeekinmonth(i);
+
+            CheckGetDay(avgPerDay,obj);
+            CheckGetWeek(avgPerWeak, obj);
+            CheckGetMonthly(peakPerMonth, obj);
             /* Console.WriteLine("AVERAGE PER DAY for continuous 63 days are ");
              for (int i = 0; i < 63; i++)
                  Console.WriteLine(avgPerDay[i]);
@@ -56,6 +48,25 @@ namespace Receiver
 
             
             
+        }
+        public static void CheckGetDay(double[] avgPerDay, FootFall obj)
+        {
+            for (int i = 1; i <= 63; i++)
+            {
+                avgPerDay[i - 1] = obj.getaverageperday(i);
+            }
+         }
+        public static void CheckGetWeek(double[] avgPerWeak, FootFall obj)
+        {
+            for (int i = 1; i <= 8; i++)
+            {
+                avgPerWeak[i - 1] = obj.getaverageperweak(i);
+            }
+        }
+        public static void CheckGetMonthly(int[] peakPerMonth, FootFall obj)
+        {
+            for (int i = 1; i <= 2; i++)
+                peakPerMonth[i - 1] = obj.getpeekinmonth(i);
         }
     }
 }

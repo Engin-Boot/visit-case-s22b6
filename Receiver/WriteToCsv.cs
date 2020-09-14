@@ -8,7 +8,15 @@ namespace Receiver
 {
     class WriteToCsv
     {    
-        
+       /* public void CheckForPeakCountMontly(int i,StringBuilder content,int[] peakPerMonth)
+        {
+            if (i < 30)
+            {
+                content.Append("," + peakPerMonth[0]);
+            }
+            else { content.Append("," + peakPerMonth[1]); }
+            
+        }*/
         public void WriteResultToCsv(double[] avgPerDay, double[] avgPerWeak, int[] peakPerMonth)
         {
             StringBuilder content = new StringBuilder();
@@ -17,40 +25,9 @@ namespace Receiver
             {
                 content.Append(avgPerDay[i]);
                 if (i < 8)
-                {
-                    content.Append("," + avgPerWeak[0]);
-                }
-                else if (i > 7 && i < 16)
-                {
-                    content.Append("," + avgPerWeak[1]);
-                }
-                else if (i > 15 && i < 24)
-                {
-                    content.Append("," + avgPerWeak[2]);
-                }
-                else if (i > 23 && i < 32)
-                {
-                    content.Append("," + avgPerWeak[3]);
-                }
-                else if (i > 31 && i < 40)
-                {
-                    content.Append("," + avgPerWeak[4]);
-                }
-                else if (i > 39 && i < 48)
-                {
-                    content.Append("," + avgPerWeak[5]);
-                }
-                else if (i > 47 && i < 56)
-                {
-                    content.Append("," + avgPerWeak[6]);
-                }
-                else
-                {
-                    content.Append("," + avgPerWeak[7]);
-                }
-                PeakCount pCount = new PeakCount();
-                pCount.CheckForPeakCountMontly(i,content,peakPerMonth);
-                
+                    content.Append(","+avgPerWeak[i]);
+                if (i < 2)
+                    content.Append("," + peakPerMonth[i]);
 
                 content.AppendLine();
             }

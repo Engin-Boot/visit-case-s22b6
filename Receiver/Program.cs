@@ -64,42 +64,37 @@ namespace Receiver
                 count++;
             }
 
-            double[] avgPerDay = new double[4];
-            double[] avgPerWeak = new double[4];
+            double[] avgPerDay = new double[63];
+            double[] avgPerWeak = new double[8];
             int[] peakPerMonth = new int[2];
             
-            for (int i = 1; i <= 4; i++)
+            for (int i = 1; i <= 63; i++)
             {
                 avgPerDay[i - 1] = obj.getaverageperday(i);
-                avgPerWeak[i-1] = obj.getaverageperweak(i);
+                
             }
-            for(int i=1;i<=2;i++)
-                peakPerMonth[i - 1] = obj.getpeekinmonth(i);
-            Console.WriteLine("AVERAGE PER DAY for continuous 4 days are ");
-            for (int i = 0; i < 4; i++)
-                Console.WriteLine(avgPerDay[i]);
-            Console.WriteLine("average in continuous 4 weaks are :");
-            for (int i = 0; i < 4; i++)
-                Console.WriteLine(avgPerWeak[i]);
-            Console.WriteLine("peaks in continuous 2 months are :");
-            for (int i = 0; i < 2; i++)
-                Console.WriteLine(peakPerMonth[i]);
-            
-
-            Console.ReadLine();
-            // string avgperweak = ans.ToString();
-             //string maxinweak = ans1.ToString();
-           /*  StringBuilder content = new StringBuilder();
-             content.AppendLine("averageperDay,averageperWeak,peakinWeak");
-            for(int i=0;i<4;i++)
+            for (int i = 1; i <= 8; i++)
             {
-                content.Append(avgPerDay[i]);
-                content.Append(avgPerWeak[i]);
+                avgPerWeak[i - 1] = obj.getaverageperweak(i);
             }
-             //content.Append(avgperweak);
-             //content.Append(maxinweak);
-             string path = "c:\\csvfolder\\output.csv";
-             File.WriteAllText(path, content.ToString());*/
+             for (int i=1;i<=2;i++)
+                peakPerMonth[i - 1] = obj.getpeekinmonth(i);
+            /* Console.WriteLine("AVERAGE PER DAY for continuous 63 days are ");
+             for (int i = 0; i < 63; i++)
+                 Console.WriteLine(avgPerDay[i]);
+             Console.WriteLine("average in continuous 8 weaks are :");
+             for (int i = 0; i < 8; i++)
+                 Console.WriteLine(avgPerWeak[i]);
+             Console.WriteLine("peaks in continuous 2 months are :");
+             for (int i = 0; i < 2; i++)
+                 Console.WriteLine(peakPerMonth[i]);*/
+
+            Console.WriteLine("CSV output file is generated");
+            Console.ReadLine();
+            WriteToCsv csv = new WriteToCsv();
+            csv.WriteResultToCsv(avgPerDay,avgPerWeak,peakPerMonth);
+
+            
             
         }
     }

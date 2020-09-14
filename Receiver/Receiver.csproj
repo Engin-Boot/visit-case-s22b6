@@ -61,6 +61,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receiver.Test\ReceiverTest.cs" />
+    <Compile Include="WriteToCsv.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

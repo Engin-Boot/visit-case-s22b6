@@ -8,10 +8,6 @@ C:\Users\320107424\source\repos\CaseStudy\Receiver\obj\Debug\Receiver.csprojAsse
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\Receiver.exe.config
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\Receiver.exe
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\Receiver.pdb
-C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.csprojAssemblyReference.cache
-C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.csproj.CoreCompileInputs.cache
-C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.exe
-C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.pdb
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\xunit.abstractions.dll
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\xunit.assert.dll
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\xunit.core.dll
@@ -20,4 +16,8 @@ C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\xunit.abstractions.xm
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\xunit.assert.xml
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\xunit.core.xml
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\bin\Debug\xunit.execution.desktop.xml
+C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.csprojAssemblyReference.cache
+C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.csproj.CoreCompileInputs.cache
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.csproj.CopyComplete
+C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.exe
+C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.pdb

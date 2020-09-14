@@ -21,3 +21,12 @@ C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.csproj.CoreC
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.csproj.CopyComplete
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.exe
 C:\Bootcamp\CaseStudy1\visit-case-s22b6\Receiver\obj\Debug\Receiver.pdb
+C:\Users\320107424\source\repos\CaseStudy\Receiver\bin\Debug\xunit.abstractions.dll
+C:\Users\320107424\source\repos\CaseStudy\Receiver\bin\Debug\xunit.assert.dll
+C:\Users\320107424\source\repos\CaseStudy\Receiver\bin\Debug\xunit.core.dll
+C:\Users\320107424\source\repos\CaseStudy\Receiver\bin\Debug\xunit.execution.desktop.dll
+C:\Users\320107424\source\repos\CaseStudy\Receiver\bin\Debug\xunit.abstractions.xml
+C:\Users\320107424\source\repos\CaseStudy\Receiver\bin\Debug\xunit.assert.xml
+C:\Users\320107424\source\repos\CaseStudy\Receiver\bin\Debug\xunit.core.xml
+C:\Users\320107424\source\repos\CaseStudy\Receiver\bin\Debug\xunit.execution.desktop.xml
+C:\Users\320107424\source\repos\CaseStudy\Receiver\obj\Debug\Receiver.csproj.CopyComplete

@@ -9,7 +9,7 @@ namespace Receiver.Receiver.Test
 { 
     public class ReceiverTest
     {
-        footfall foot = new footfall();
+        FootFall foot = new FootFall();
         [Fact]
         public void Testgetaverageperday()
         {

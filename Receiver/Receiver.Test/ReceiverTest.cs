@@ -13,22 +13,22 @@ namespace Receiver.Receiver.Test
         [Fact]
         public void Testgetaverageperday()
         {
-           int avgDay= (int)foot.getaverageperday(1097);
-           Assert.Equal(45, avgDay);
+           double avgDay= foot.getaverageperday(1);
+           Assert.Equal(45.7083333333333, avgDay);
         }
 
         [Fact]
         public void Testgetaverageperweak()
         {
-            int avgWeek = (int)foot.getaverageperweak(1);
-            Assert.Equal(23, avgWeek);
+            double avgWeek = foot.getaverageperweak(2);
+            Assert.Equal(1837.71428571429, avgWeek);
         }
 
         [Fact]
         public void Testgetpeekinmonth()
         {
             int peakMonth = foot.getpeekinmonth(1);
-            Assert.Equal(1097, peakMonth);
+            Assert.Equal(3691, peakMonth);
         }
     }
 }

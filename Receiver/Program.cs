@@ -38,7 +38,7 @@ namespace Receiver
             {
                 avgPerDay[i - 1] = foot.GetAveragePerDay(i);
             }
-         }
+        }
         private static void CheckGetWeek(double[] avgPerWeak, FootFall foot)
         {
             for (int i = 1; i <= 8; i++)

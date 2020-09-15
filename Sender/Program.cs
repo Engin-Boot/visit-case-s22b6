@@ -7,16 +7,23 @@ namespace Sender
     {
         static void Main()
         {
-            string filePath = @"c:\csvfolder\casestudy.csv";
-            StreamReader sr = new StreamReader(filePath);
-            var lines = new List<string[]>();
-            while (!sr.EndOfStream)
+            try
             {
-                string[] line = sr.ReadLine().Split(',');
-                lines.Add(line);
+                string filePath = @"c:\csvfolder\casestudy.csv";
+                StreamReader source = new StreamReader(filePath);
+                var lines = new List<string[]>();
+                while (!source.EndOfStream)
+                {
+                    string[] line = source.ReadLine().Split(',');
+                    lines.Add(line);
+                }
+                PrintOnConsole printOnConsole = new PrintOnConsole();
+                printOnConsole.PrintingInfoOnConsole(lines);
             }
-            PrintOnConsole printOnConsole = new PrintOnConsole();
-            printOnConsole.PrintingInfoOnConsole(lines);
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

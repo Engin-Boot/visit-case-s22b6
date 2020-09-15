@@ -6,7 +6,7 @@ namespace Sender
 {
     class PrintOnConsole
     {
-        int _countOfLoop = 0;
+        int _countOfLoop = default;
         public void PrintingInfoOnConsole(List<string[]> lines)
         {
 

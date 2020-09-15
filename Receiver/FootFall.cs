@@ -5,39 +5,39 @@ namespace Receiver
     class FootFall
     {
         readonly string[] date = new string[65];
-        readonly int[] countondate = new int[65];
-        public void Setdate(int index, string dateonindex)
+        readonly int[] countOnDate = new int[65];
+        public void Setdate(int index, string dateOnIndex)
         {
-            date[index] = dateonindex;
+            date[index] = dateOnIndex;
         }
-        public void Setcountondate(int index, int countonindex)
+        public void Setcountondate(int index, int counOnIndex)
         {
-            countondate[index] = countonindex;
+            countOnDate[index] = counOnIndex;
         }
-        public double Getaverageperday(int startofday)
+        public double GetAveragePerDay(int startOfDay)
         {
             double averageOfday = 0.0;
-            averageOfday = (double)countondate[startofday - 1] / 24;
+            averageOfday = (double)countOnDate[startOfDay - 1] / 24;
             return averageOfday;
         }
-        public double Getaverageperweak(int startOfweak)
+        public double GetAveragePerWeek(int startOfWeek)
         {
             int sum = 0;
             double average = 0.0;
-            int startIndex = 7 * (startOfweak - 1);
-            for (int i = startIndex; i < 7 * startOfweak; i++)
-                sum = sum + countondate[i];
+            int startIndex = 7 * (startOfWeek - 1);
+            for (int i = startIndex; i < 7 * startOfWeek; i++)
+                sum = sum + countOnDate[i];
             average = (double)sum / 7;
             return average;
         }
-        public int Getpeekinmonth(int startOfmonth)
+        public int GetPeekInMonth(int startOfmonth)
         {
             int startIndex = 30 * (startOfmonth - 1);
-            int max = countondate[startIndex];
+            int max = countOnDate[startIndex];
             for (int i = startIndex + 1; i < 30 * startOfmonth; i++)
             {
-                if (countondate[i] > max)
-                    max = countondate[i];
+                if (countOnDate[i] > max)
+                    max = countOnDate[i];
             }
             return max;
         }

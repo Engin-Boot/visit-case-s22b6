@@ -15,8 +15,6 @@ namespace Receiver
                 var splitted = temp.Split(new[] { ' ' }, 2);
                 obj.Setdate(count,splitted[0]);
                 obj.Setcountondate(count,int.Parse(splitted[1]));
-                 //Console.WriteLine(splitted[0]); 
-                // Console.WriteLine(int.Parse(splitted[1]));
                 count++;
             }
 
@@ -27,42 +25,31 @@ namespace Receiver
             CheckGetDay(avgPerDay,obj);
             CheckGetWeek(avgPerWeak, obj);
             CheckGetMonthly(peakPerMonth, obj);
-            /* Console.WriteLine("AVERAGE PER DAY for continuous 63 days are ");
-             for (int i = 0; i < 63; i++)
-                 Console.WriteLine(avgPerDay[i]);
-             Console.WriteLine("average in continuous 8 weaks are :");
-             for (int i = 0; i < 8; i++)
-                 Console.WriteLine(avgPerWeak[i]);
-             Console.WriteLine("peaks in continuous 2 months are :");
-             for (int i = 0; i < 2; i++)
-                 Console.WriteLine(peakPerMonth[i]);*/
-
+           
             Console.WriteLine("CSV output file is generated");
             Console.ReadLine();
             WriteToCsv csv = new WriteToCsv();
             csv.WriteResultToCsv(avgPerDay,avgPerWeak,peakPerMonth);
 
-            
-            
         }
-        private static void CheckGetDay(double[] avgPerDay, FootFall obj)
+        private static void CheckGetDay(double[] avgPerDay, FootFall foot)
         {
             for (int i = 1; i <= 63; i++)
             {
-                avgPerDay[i - 1] = obj.Getaverageperday(i);
+                avgPerDay[i - 1] = foot.GetAveragePerDay(i);
             }
          }
-        private static void CheckGetWeek(double[] avgPerWeak, FootFall obj)
+        private static void CheckGetWeek(double[] avgPerWeak, FootFall foot)
         {
             for (int i = 1; i <= 8; i++)
             {
-                avgPerWeak[i - 1] = obj.Getaverageperweak(i);
+                avgPerWeak[i - 1] = foot.GetAveragePerWeek(i);
             }
         }
-        private static void CheckGetMonthly(int[] peakPerMonth, FootFall obj)
+        private static void CheckGetMonthly(int[] peakPerMonth, FootFall foot)
         {
             for (int i = 1; i <= 2; i++)
-                peakPerMonth[i - 1] = obj.Getpeekinmonth(i);
+                peakPerMonth[i - 1] = foot.GetPeekInMonth(i);
         }
     }
 }

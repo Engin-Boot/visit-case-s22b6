@@ -7,14 +7,14 @@ namespace Sender
     class PrintOnConsole
     {
         int _countOfLoop = 0;
-        public void printingInfoOnConsole(List<string[]> lines)
+        public void PrintingInfoOnConsole(List<string[]> lines)
         {
 
-            for (int rownumber = 1; rownumber < lines.Count; rownumber++)
+            for (int rowNumber = 1; rowNumber < lines.Count; rowNumber++)
             {
-                for (int columnnumber = 0; columnnumber < lines[rownumber].Length; columnnumber++)
+                for (int columnNumber = 0; columnNumber < lines[rowNumber].Length; columnNumber++)
                 {
-                    Console.Write(lines[rownumber][columnnumber]);
+                    Console.Write(lines[rowNumber][columnNumber]);
                     Console.Write(" ");
                 }
                 _countOfLoop++;

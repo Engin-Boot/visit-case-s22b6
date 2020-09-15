@@ -9,21 +9,21 @@ namespace Receiver.Receiver.Test
         [Fact]
         public void Testgetaverageperday()
         {
-           double avgDay= _objfoot.Getaverageperday(1);
+           double avgDay= _objfoot.GetAveragePerDay(1);
            Assert.Equal(45.7083333333333, avgDay);
         }
 
         [Fact]
         public void Testgetaverageperweak()
         {
-            double avgWeek = _objfoot.Getaverageperweak(2);
+            double avgWeek = _objfoot.GetAveragePerWeek(2);
             Assert.Equal(1837.71428571429, avgWeek);
         }
 
         [Fact]
         public void Testgetpeekinmonth()
         {
-            int peakMonth = _objfoot.Getpeekinmonth(1);
+            int peakMonth = _objfoot.GetPeekInMonth(1);
             Assert.Equal(3691, peakMonth);
         }
     }

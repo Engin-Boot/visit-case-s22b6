@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 
 namespace Sender
 {
     class PrintOnConsole
     {
-        int countOfLoop = 0;
+        int _countOfLoop = 0;
         public void printingInfoOnConsole(List<string[]> lines)
         {
 
@@ -21,14 +17,14 @@ namespace Sender
                     Console.Write(lines[rownumber][columnnumber]);
                     Console.Write(" ");
                 }
-                countOfLoop++;
+                _countOfLoop++;
                 Console.WriteLine();
             }
             Console.ReadLine();
         }
         public int NumberOfRowsPrintingOnConsole()
         {
-            return countOfLoop;
+            return _countOfLoop;
         }
     }
 }

@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 namespace Receiver
 {
     class WriteToCsv
     {
-         public void CheckForPeakCountMontly(int i,StringBuilder content,int[] peakPerMonth)
+         private void CheckForPeakCountMontly(int i,StringBuilder content,int[] peakPerMonth)
          {
                   if (i < 2) { content.Append("," + peakPerMonth[i]); }
          }
-        public void CheckForWeaklyAvg(int i, StringBuilder content, double[] avgPerWeak)
+        private void CheckForWeaklyAvg(int i, StringBuilder content, double[] avgPerWeak)
         {
             if (i < 8) { content.Append("," + avgPerWeak[i]); }
         }

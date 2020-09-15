@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+
 namespace Receiver
 {
    
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             FootFall obj = new FootFall();
             string temp;
@@ -49,21 +45,21 @@ namespace Receiver
             
             
         }
-        public static void CheckGetDay(double[] avgPerDay, FootFall obj)
+        private static void CheckGetDay(double[] avgPerDay, FootFall obj)
         {
             for (int i = 1; i <= 63; i++)
             {
                 avgPerDay[i - 1] = obj.getaverageperday(i);
             }
          }
-        public static void CheckGetWeek(double[] avgPerWeak, FootFall obj)
+        private static void CheckGetWeek(double[] avgPerWeak, FootFall obj)
         {
             for (int i = 1; i <= 8; i++)
             {
                 avgPerWeak[i - 1] = obj.getaverageperweak(i);
             }
         }
-        public static void CheckGetMonthly(int[] peakPerMonth, FootFall obj)
+        private static void CheckGetMonthly(int[] peakPerMonth, FootFall obj)
         {
             for (int i = 1; i <= 2; i++)
                 peakPerMonth[i - 1] = obj.getpeekinmonth(i);

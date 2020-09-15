@@ -8,7 +8,7 @@ namespace Sender
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             /*using (var reader = new StreamReader(@"c:\csvfolder\casestudy.csv"))
             {
@@ -39,15 +39,15 @@ namespace Sender
             Console.WriteLine(lines.Count);
             Console.WriteLine(lines[0][5]);
                 */
-            string filePath = @"c:\csvfolder\casestudy1.csv";
+            string filePath = @"c:\csvfolder\casestudy.csv";
             StreamReader sr = new StreamReader(filePath);
             var lines = new List<string[]>();
-            int Row = 0;
+           // int Row = 0;
             while (!sr.EndOfStream)
             {
-                string[] Line = sr.ReadLine().Split(',');
-                lines.Add(Line);
-                Row++;
+                string[] line = sr.ReadLine().Split(',');
+                lines.Add(line);
+               // Row++;
             }
             // Row Number 0 is fixed for name of columns
             //Console.WriteLine("total no of data rows are " + Row);

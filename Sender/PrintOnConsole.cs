@@ -6,10 +6,10 @@ namespace Sender
 {
     class PrintOnConsole
     {
-        int _countOfLoop = default;
+        int _countOfLoop;
         public void PrintingInfoOnConsole(List<string[]> lines)
         {
-
+            //_countOfLoop = 0;
             for (int rowNumber = 1; rowNumber < lines.Count; rowNumber++)
             {
                 for (int columnNumber = 0; columnNumber < lines[rowNumber].Length; columnNumber++)

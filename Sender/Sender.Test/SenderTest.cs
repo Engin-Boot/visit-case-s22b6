@@ -9,7 +9,7 @@ namespace Sender.Sender.Test
 {
     public class SenderTest
     {
-        PrintOnConsole objTestOfSender = new PrintOnConsole();
+        readonly PrintOnConsole objTestOfSender = new PrintOnConsole();
         [Fact]
         public void NumberOfRows()
         {

@@ -7,23 +7,23 @@ namespace Sender
     {
         static void Main()
         {
-            
+            try
+            {
                 string filePath = @"c:\csvfolder\casestudy.csv";
                 StreamReader source = new StreamReader(filePath);
                 var lines = new List<string[]>();
                 while (!source.EndOfStream)
                 {
-                    //string[] line= null;
-                    if (source.ReadLine().Split(',') != null) {
                     string[] line = source.ReadLine().Split(',');
                     lines.Add(line);
                 }
-                    
-                    
-                }
                 PrintOnConsole printOnConsole = new PrintOnConsole();
                 printOnConsole.PrintingInfoOnConsole(lines);
-                      
+            }
+            catch(NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }           
         }
     }
 }

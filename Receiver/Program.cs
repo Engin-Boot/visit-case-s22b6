@@ -3,7 +3,7 @@
 namespace Receiver
 {
    
-    class Program
+     abstract class Program
     {
         static void Main()
         {
@@ -13,8 +13,8 @@ namespace Receiver
             while ((temp = Console.ReadLine()) != null)
             {
                 var splitted = temp.Split(new[] { ' ' }, 2);
-                obj.setdate(count,splitted[0]);
-                obj.setcountondate(count,int.Parse(splitted[1]));
+                obj.Setdate(count,splitted[0]);
+                obj.Setcountondate(count,int.Parse(splitted[1]));
                  //Console.WriteLine(splitted[0]); 
                 // Console.WriteLine(int.Parse(splitted[1]));
                 count++;
@@ -49,20 +49,20 @@ namespace Receiver
         {
             for (int i = 1; i <= 63; i++)
             {
-                avgPerDay[i - 1] = obj.getaverageperday(i);
+                avgPerDay[i - 1] = obj.Getaverageperday(i);
             }
          }
         private static void CheckGetWeek(double[] avgPerWeak, FootFall obj)
         {
             for (int i = 1; i <= 8; i++)
             {
-                avgPerWeak[i - 1] = obj.getaverageperweak(i);
+                avgPerWeak[i - 1] = obj.Getaverageperweak(i);
             }
         }
         private static void CheckGetMonthly(int[] peakPerMonth, FootFall obj)
         {
             for (int i = 1; i <= 2; i++)
-                peakPerMonth[i - 1] = obj.getpeekinmonth(i);
+                peakPerMonth[i - 1] = obj.Getpeekinmonth(i);
         }
     }
 }

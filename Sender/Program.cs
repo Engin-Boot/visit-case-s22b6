@@ -14,8 +14,8 @@ namespace Sender
                 var lines = new List<string[]>();
                 while (!source.EndOfStream)
                 {
-                    string[] line = source.ReadLine().Split(',');
-                    lines.Add(line);
+                   
+                    lines.Add(source.ReadLine().Split(','));
                 }
                 PrintOnConsole printOnConsole = new PrintOnConsole();
                 printOnConsole.PrintingInfoOnConsole(lines);

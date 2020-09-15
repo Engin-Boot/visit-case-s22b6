@@ -7,14 +7,14 @@ using Xunit;
 
 namespace Sender.Sender.Test
 {
-   /* public class SenderTest
+    public class SenderTest
     {
         PrintOnConsole objTestOfSender = new PrintOnConsole();
         [Fact]
         public void NumberOfRows()
         {
             int countOfLoop = objTestOfSender.NumberOfRowsPrintingOnConsole();
-            Assert.Equal(60, countOfLoop);
+            Assert.Equal(63, countOfLoop);
         }
-    }*/
+    }
 }

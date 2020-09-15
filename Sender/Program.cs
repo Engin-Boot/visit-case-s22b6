@@ -12,10 +12,11 @@ namespace Sender
                 string filePath = @"c:\csvfolder\casestudy.csv";
                 StreamReader source = new StreamReader(filePath);
                 var lines = new List<string[]>();
+                string input;
                 while (!source.EndOfStream)
                 {
-                   
-                    lines.Add(source.ReadLine().Split(','));
+                    input = source.ReadLine();
+                    lines.Add(input.Split(','));
                 }
                 PrintOnConsole printOnConsole = new PrintOnConsole();
                 printOnConsole.PrintingInfoOnConsole(lines);

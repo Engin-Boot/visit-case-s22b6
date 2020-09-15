@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sender
 {   
-    class PrintOnConsole
+    /*class PrintOnConsole
     {
         int countOfLoop = 0;
         public void printingInfoOnConsole(List<string[]> lines)
@@ -28,5 +28,5 @@ namespace Sender
         {
             return countOfLoop;
         }
-    }
+    }*/
 }

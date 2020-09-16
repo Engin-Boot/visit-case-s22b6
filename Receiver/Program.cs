@@ -12,7 +12,7 @@ namespace Receiver
             int count = 0;
             while ((temp = Console.ReadLine()) != null)
             {
-                var splitted = temp.Split(new[] { ' ' }, 2);
+                var splitted = temp.Split(new[] { ',' }, 2);
                 obj.Setdate(count,splitted[0]);
                 obj.Setcountondate(count,int.Parse(splitted[1]));
                 count++;

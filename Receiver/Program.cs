@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Receiver
 {
@@ -9,18 +10,18 @@ namespace Receiver
         {
             FootFall obj = new FootFall();
             string temp;
-            int count = 0;
+           // int count = 0;
             while ((temp = Console.ReadLine()) != null)
             {
                 var splitted = temp.Split(new[] { ',' }, 2);
-                obj.Setdate(count,splitted[0]);
-                obj.Setcountondate(count,int.Parse(splitted[1]));
-                count++;
+                obj.Setdate(splitted[0]);
+                obj.Setcountondate(int.Parse(splitted[1]));
+                //count++;
             }
 
-            double[] avgPerDay = new double[63];
-            double[] avgPerWeak = new double[8];
-            int[] peakPerMonth = new int[2];
+            List<double> avgPerDay = new List<double>();
+            List<double> avgPerWeak = new List<double>();
+            List<int> peakPerMonth = new List<int>();
 
             CheckGetDay(avgPerDay,obj);
             CheckGetWeek(avgPerWeak, obj);
@@ -29,27 +30,27 @@ namespace Receiver
             Console.WriteLine("CSV output file is generated");
             Console.ReadLine();
             WriteToCsv csv = new WriteToCsv();
-            csv.WriteResultToCsv(avgPerDay,avgPerWeak,peakPerMonth);
+            csv.WriteResultToCsv(avgPerDay,avgPerWeak,peakPerMonth, obj);
 
         }
-        private static void CheckGetDay(double[] avgPerDay, FootFall foot)
+        private static void CheckGetDay(List<double> avgPerDay, FootFall foot)
         {
-            for (int i = 1; i <= 63; i++)
+            for (int i = 1; i <= foot._date.Count; i++)
             {
-                avgPerDay[i - 1] = foot.GetAveragePerDay(i);
+                avgPerDay.Add(foot.GetAveragePerDay(i));
             }
         }
-        private static void CheckGetWeek(double[] avgPerWeak, FootFall foot)
+        private static void CheckGetWeek(List<double> avgPerWeak, FootFall foot)
         {
-            for (int i = 1; i <= 8; i++)
+            for (int i = 1; i <= (int)foot._date.Count/7; i++)
             {
-                avgPerWeak[i - 1] = foot.GetAveragePerWeek(i);
+                avgPerWeak.Add(foot.GetAveragePerWeek(i));
             }
         }
-        private static void CheckGetMonthly(int[] peakPerMonth, FootFall foot)
+        private static void CheckGetMonthly(List<int> peakPerMonth, FootFall foot)
         {
-            for (int i = 1; i <= 2; i++)
-                peakPerMonth[i - 1] = foot.GetPeekInMonth(i);
+            for (int i = 1; i <= (int)foot._date.Count/30; i++)
+                peakPerMonth.Add(foot.GetPeekInMonth(i));
         }
     }
 }

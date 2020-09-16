@@ -1,16 +1,18 @@
-﻿namespace Receiver
+﻿using System.Collections.Generic;
+
+namespace Receiver
 {
     class FootFall
     {
-        readonly string[] _date = new string[65];
-        readonly int[] _countOnDate = new int[65];
-        public void Setdate(int index, string dateOnIndex)
+        readonly public List<string> _date = new List<string>();
+        readonly public List<int> _countOnDate = new List<int>();
+        public void Setdate( string dateOnIndex)
         {
-            _date[index] = dateOnIndex;
+            _date.Add(dateOnIndex);
         }
-        public void Setcountondate(int index, int counOnIndex)
+        public void Setcountondate(int counOnIndex)
         {
-            _countOnDate[index] = counOnIndex;
+            _countOnDate.Add(counOnIndex);
         }
         public double GetAveragePerDay(int startOfDay)
         {

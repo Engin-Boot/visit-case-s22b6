@@ -1,28 +1,30 @@
 ﻿using System.Text;
 using System.IO;
+using System.Collections.Generic;
+
 namespace Receiver
 {
     class WriteToCsv
     {
-         private void CheckForPeakCountMontly(int i,StringBuilder content,int[] peakPerMonth)
+         private void CheckForPeakCountMontly(int i,StringBuilder content,List<int> peakPerMonth,FootFall foot)
          {
-                  if (i < 2) { content.Append("," + peakPerMonth[i]); }
+                  if (i < (int)foot._date.Count / 30) { content.Append("," + peakPerMonth[i]); }
          }
-        private void CheckForWeaklyAvg(int i, StringBuilder content, double[] avgPerWeak)
+        private void CheckForWeaklyAvg(int i, StringBuilder content, List<double> avgPerWeak, FootFall foot)
         {
-            if (i < 8) { content.Append("," + avgPerWeak[i]); }
+            if (i < (int)foot._date.Count / 7) { content.Append("," + avgPerWeak[i]); }
         }
-        public void WriteResultToCsv(double[] avgPerDay, double[] avgPerWeak, int[] peakPerMonth)
+        public void WriteResultToCsv(List<double> avgPerDay, List<double> avgPerWeak, List<int> peakPerMonth,FootFall foot)
         {
             StringBuilder content = new StringBuilder();
             content.AppendLine("AveragePerDay,AveragePerWeak,PeakInMonth");
-            for (int i = 0; i < 63; i++)
+            for (int i = 0; i < foot._date.Count-1; i++)
             {
                 content.Append(avgPerDay[i]);
                 
                 
-                CheckForWeaklyAvg(i, content, avgPerWeak);
-                CheckForPeakCountMontly(i, content, peakPerMonth);
+                CheckForWeaklyAvg(i, content, avgPerWeak,foot);
+                CheckForPeakCountMontly(i, content, peakPerMonth,foot);
 
                 content.AppendLine();
             }

@@ -8,17 +8,17 @@ namespace Receiver
     {
          private void CheckForPeakCountMontly(int i,StringBuilder content,List<int> peakPerMonth,FootFall foot)
          {
-                  if (i < (int)foot._date.Count / 30) { content.Append("," + peakPerMonth[i]); }
+                  if (i < foot.GetDateCount() / 30) { content.Append("," + peakPerMonth[i]); }
          }
         private void CheckForWeaklyAvg(int i, StringBuilder content, List<double> avgPerWeak, FootFall foot)
         {
-            if (i < (int)foot._date.Count / 7) { content.Append("," + avgPerWeak[i]); }
+            if (i < foot.GetDateCount() / 7) { content.Append("," + avgPerWeak[i]); }
         }
         public void WriteResultToCsv(List<double> avgPerDay, List<double> avgPerWeak, List<int> peakPerMonth,FootFall foot)
         {
             StringBuilder content = new StringBuilder();
             content.AppendLine("AveragePerDay,AveragePerWeak,PeakInMonth");
-            for (int i = 0; i < foot._date.Count-1; i++)
+            for (int i = 0; i < foot.GetDateCount() - 1; i++)
             {
                 content.Append(avgPerDay[i]);
                 

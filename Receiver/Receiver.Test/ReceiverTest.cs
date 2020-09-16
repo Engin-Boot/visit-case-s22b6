@@ -25,5 +25,12 @@ namespace Receiver.Receiver.Test
             int peakMonth = _objfoot.GetPeekInMonth(1);
             Assert.Equal(3691, peakMonth);
         }
+
+        [Fact]
+        public void TestGetDateCount()
+        {
+            int count = _objfoot.GetDateCount();
+            Assert.Equal(63, count);
+        }
     }
 }

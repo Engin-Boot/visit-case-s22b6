@@ -35,21 +35,21 @@ namespace Receiver
         }
         private static void CheckGetDay(List<double> avgPerDay, FootFall foot)
         {
-            for (int i = 1; i <= foot._date.Count; i++)
+            for (int i = 1; i <= foot.GetDateCount(); i++)
             {
                 avgPerDay.Add(foot.GetAveragePerDay(i));
             }
         }
         private static void CheckGetWeek(List<double> avgPerWeak, FootFall foot)
         {
-            for (int i = 1; i <= (int)foot._date.Count/7; i++)
+            for (int i = 1; i <= foot.GetDateCount() / 7; i++)
             {
                 avgPerWeak.Add(foot.GetAveragePerWeek(i));
             }
         }
         private static void CheckGetMonthly(List<int> peakPerMonth, FootFall foot)
         {
-            for (int i = 1; i <= (int)foot._date.Count/30; i++)
+            for (int i = 1; i <= foot.GetDateCount() / 30; i++)
                 peakPerMonth.Add(foot.GetPeekInMonth(i));
         }
     }

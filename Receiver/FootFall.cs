@@ -4,8 +4,8 @@ namespace Receiver
 {
     class FootFall
     {
-        readonly public List<string> _date = new List<string>();
-        readonly public List<int> _countOnDate = new List<int>();
+        readonly  List<string> _date = new List<string>();
+        readonly  List<int> _countOnDate = new List<int>();
         public void Setdate( string dateOnIndex)
         {
             _date.Add(dateOnIndex);
@@ -14,6 +14,11 @@ namespace Receiver
         {
             _countOnDate.Add(counOnIndex);
         }
+        public int GetDateCount()
+        {
+            return _date.Count;
+        }
+
         public double GetAveragePerDay(int startOfDay)
         {
             double averageOfday = (double)_countOnDate[startOfDay - 1] / 24;

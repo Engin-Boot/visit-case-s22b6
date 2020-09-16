@@ -15,8 +15,6 @@ namespace Sender
                 string line;
                 while ((line = source.ReadLine()) != null)
                 {
-                    //string[] line = source.ReadLine().Split(',');
-                    // lines.Add(line);
                     infoFootfall.Add(line);
                 }
                 PrintOnConsole printOnConsole = new PrintOnConsole();

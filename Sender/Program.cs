@@ -20,7 +20,7 @@ namespace Sender
                 PrintOnConsole printOnConsole = new PrintOnConsole();
                 printOnConsole.PrintingInfoOnConsole(infoFootfall);
             }
-            catch(NullReferenceException ex)
+            catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }           

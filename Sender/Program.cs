@@ -9,7 +9,7 @@ namespace Sender
         {
             try
             {
-                string filePath = @"c:\csvfolder\casestudy.csv";
+                string filePath = @"c:\csvfolder\casestudy1.csv";
                 StreamReader source = new StreamReader(filePath);
                 List<string> infoFootfall = new List<string>();
                 string line;

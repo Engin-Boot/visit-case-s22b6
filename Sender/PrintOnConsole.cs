@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Sender
 {
-    class PrintOnConsole
+    public class PrintOnConsole
     {
         int _countOfLoop;
         public void PrintingInfoOnConsole(List<string> lines)

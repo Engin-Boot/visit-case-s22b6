@@ -13,7 +13,7 @@ namespace Receiver.Test
         public void TestAddData()
         {
             _objfoot.AddData("7/1/2020", "9:30 PM");
-            int count = _objfoot.internalDictionary.Count;
+            int count = _objfoot.GetDictinaryCount();
             Assert.Equal(1,count );
         }
 

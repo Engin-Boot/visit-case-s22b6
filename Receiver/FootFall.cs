@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Receiver
 {
     public class FootFall
     {
-        public Dictionary<string, List<string>> internalDictionary = new Dictionary<string, List<string>>();
+        Dictionary<string, List<string>> internalDictionary = new Dictionary<string, List<string>>();
         public void AddData(string key, string value)
         {
             if (this.internalDictionary.ContainsKey(key))
@@ -19,17 +18,32 @@ namespace Receiver
             }
             else
             {
-                List<string> list = new List<string>();
-                list.Add(value);
+                List<string> list = new List<string>
+                {
+                    value
+                };
                 this.internalDictionary.Add(key, list);
             }
         }
-        
+
+        public int GetDictinaryCount()
+        {
+            return internalDictionary.Count;
+        }
+        public  List<double> CheckGetDay()
+        {
+            List<double> avgPerDay = new List<double>();
+            foreach (KeyValuePair<string, List<string>> kvp in internalDictionary)
+            {
+                avgPerDay.Add(GetAveragePerDay(kvp.Key));
+            }
+            return avgPerDay;
+        }
+
 
         public double GetAveragePerDay(string day)
-        {
-            double averageOfday;           
-            averageOfday = internalDictionary[day].Count / 7;
+        {          
+            double averageOfday = internalDictionary[day].Count / 7;
             return averageOfday;
         }
         public List<double> GetAveragePerWeek()
@@ -77,32 +91,28 @@ namespace Receiver
             peaks.Add(peak);
             return peaks;
         }
-        public List<double> GetAvgCalcWeek(List<double> avg,List<int> countFoot,int sum)
+        private List<double> GetAvgCalcWeek(List<double> avg,List<int> countFoot,int sum)
         {
             if (internalDictionary.Count < 7)
-            {
-                avg.Add(sum / internalDictionary.Count);
+            {   double outP= sum / internalDictionary.Count;
+                avg.Add(outP);
             }
             else
             {
                 for (int i = 0; i <= countFoot.Count / 7; i++)
                 {
-                    avg.Add(countFoot[i] / 7);
+                    double outF = countFoot[i] / 7;
+                    avg.Add(outF);
                 }
             }
             return avg;
         }
-        public int GetCalcMonth( List<int> countFoot, List<int> peakList)
+        private int GetCalcMonth( List<int> countFoot, List<int> peakList)
         {
             int peak;
-            if (internalDictionary.Count < 30)
-            {
-                peak = countFoot.Max();
-            }
-            else
-            {
-                peak = peakList[peakList.Count - 1];
-            }
+            
+            peak=internalDictionary.Count < 30 ? countFoot.Max() :  peakList[peakList.Count - 1];
+            
             return peak;
         }
     }

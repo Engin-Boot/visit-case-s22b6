@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Receiver
 {
    
-     class Program
+     abstract class Program
      {
         static void Main()
         {
@@ -17,25 +17,18 @@ namespace Receiver
             }
             //footFall.Print();
 
-            List<double> avgPerDay = new List<double>();
-            
+            //List<double> avgPerDay = new List<double>();
 
-            CheckGetDay(avgPerDay,footFall);
+
+            List<double> avgPerDay = footFall.CheckGetDay();
             List<double> avgWeek = footFall.GetAveragePerWeek();
             List<int> peakPerMonth= footFall.GetPeekInMonth();
            
             Console.WriteLine("CSV output file is generated");
             Console.ReadLine();
             WriteToCsv csv = new WriteToCsv();
-            csv.WriteResultToCsv(avgPerDay, avgWeek, peakPerMonth, footFall);
+            csv.WriteResultToCsv(avgPerDay, avgWeek, peakPerMonth);
 
-        }
-        private static void CheckGetDay(List<double> avgPerDay, FootFall foot)
-        {
-            foreach (KeyValuePair<string, List<string>> kvp in foot.internalDictionary)
-            {
-                avgPerDay.Add(foot.GetAveragePerDay(kvp.Key));
-            }
         }
         
        
